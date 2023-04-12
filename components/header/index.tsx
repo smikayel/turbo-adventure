@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 
 import styles from "./header.module.scss";
+import AuthButton from "components/Buttons/AuthButton";
 
 const navLists = [
   { name: "HOME", href: "/home" },
@@ -35,6 +36,10 @@ export default function Header(): JSX.Element {
               ))}
             </ul>
           </nav>
+          <div className={styles.AuthContainer}>
+            <AuthButton text="Sign In" navigateUrl="#" isSignUp={false}/>
+            <AuthButton text="Sign Up" navigateUrl="#" isSignUp/>
+          </div>
         </div>
       </header >
     </div>
