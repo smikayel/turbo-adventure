@@ -4,6 +4,7 @@ import { OBJLoader as Loader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { createAnimate } from './objHelpers/animate';
 import RoateBar from 'components/RoateBar';
+import styles from './style.module.scss'
 
 const loader = new Loader();
 const textureLoader = new THREE.TextureLoader();
