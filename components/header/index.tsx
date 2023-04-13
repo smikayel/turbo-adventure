@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "./header.module.scss";
 import AuthButton from "components/Buttons/AuthButton";
+import Image from "components/image";
 
 const navLists = [
   { name: "HOME", href: "/home" },
@@ -23,6 +24,7 @@ export default function Header(): JSX.Element {
         <div className={styles.inner}>
           <nav className={styles.navbar}>
             <ul className={styles.navigationBox}>
+              {/* <Image src={""}/> */}
               {navLists.map((list, index) => (
                 <li key={list.name} onClick={() => setActvated(index)}>
                   <Link scroll={!(list.name === 'Services')}  href={list.href} passHref>
