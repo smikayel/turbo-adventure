@@ -4,6 +4,9 @@ import { OBJLoader as Loader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { createAnimate } from './objHelpers/animate';
 import RoateBar from 'components/RoateBar';
+import styles from './style.module.scss'
+import { PointLight } from 'three';
+
 
 const loader = new Loader();
 const textureLoader = new THREE.TextureLoader();
@@ -51,6 +54,9 @@ export default function ObjViewer({
 	}, [camera, scene]);
 
 	const renderModel = () => {
+
+		const light = new PointLight(0xffffff, 0.2, 5);
+		light.position.set(0, 10, 10);
 		loader.load(pathToModel, (object) => {
 		  object.traverse((child) => {
 			if (child instanceof THREE.Mesh) {
@@ -69,6 +75,7 @@ export default function ObjViewer({
 			}
 		  });
 		  scene.add(object);
+		  scene.add(light);
 		});
 	};
 
