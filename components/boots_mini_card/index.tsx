@@ -3,13 +3,6 @@ import { useEffect } from 'react';
 import styles from "./card.module.css";
 
 
-// export const ammount = {
-//   'AMD': '֏',
-//   'RUB': '₱',
-//   'EUR': '€',
-//   'USD': '$'
-// }
-
 export default function MiniBootsCard({ammountSymbole = '$', price = 150, title= 'Nike Air force'}) {
 
   if (title.length > 20)

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: FjallaOne-Regular;
+    src: url('../../public/fonts/FjallaOne-Regular.ttf');
+  }
+
+.PreviewInfo {
+    position: absolute;
+    font-family: FjallaOne-Regular;
+    font-weight: bold;
+    top: 250px;
+    right: 280px;
+    .InfoTitle {
+        font-size: 25px;
+    }
+    .Price {
+        font-size: 30px;
+        color: #fff;
+    }
+}
+

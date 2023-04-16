@@ -6,6 +6,9 @@ import { createAnimate } from './objHelpers/animate';
 import RoateBar from 'components/RoateBar';
 import styles from './style.module.scss'
 import { PointLight } from 'three';
+import PreviewInfo from './previewInfo';
+import MiniBootsCard from 'components/boots_mini_card';
+import FooterNavBar from 'components/FooterNavBar';
 
 
 const loader = new Loader();
@@ -14,6 +17,19 @@ const textureLoader = new THREE.TextureLoader();
 export default function ObjViewer({
 	pathToModel = '/models/airmax_model/air_max.obj',
 	pathToModelTexture = '/models/airmax_model/textures/Airmax_Sketchfab_BaseColor.jpg',
+	modelInfo = {
+		uid: "uuid",
+		price: 20,
+		currency: 'usd',
+		brend: 'Nike',
+		model: 'Air Max',
+		is3DPreview: true,
+	},
+	brend = {
+		name: 'nike',
+		slogan: 'just do it',
+		founded: 'date time strtemp...'
+	}
 }) {
 	const containerRef = useRef();
 	const [renderer, setRenderer] = useState(undefined);
@@ -82,7 +98,9 @@ export default function ObjViewer({
 	return (
 		<>
 			{/* <RoateBar /> */}
-			<div ref={containerRef} />
+			<div ref={containerRef} className={styles.ObjViewer}/>
+			<PreviewInfo product={modelInfo} brend={brend}/>
+			<FooterNavBar />
 		</>
 	);
 }

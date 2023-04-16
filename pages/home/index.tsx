@@ -12,9 +12,8 @@ export default function Home() {
 			<ObjViewer />
 			
 			{/* <div className={style.btn_buy_now}> */}
-				<BuyNow />
+				{/* <BuyNow /> */}
 			{/* </div> */}
-			{/* <MiniBootsCard /> */}
 		</div>
 	);
 }
